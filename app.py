@@ -571,11 +571,11 @@ def get_agricultural_risk(batch_id):
         env_dict = None
         if env_data:
             env_dict = {
-                'temperature': env_data.temperature,
-                'humidity': env_data.humidity,
-                'rainfall': env_data.rainfall,
-                'soil_moisture': env_data.soil_moisture,
-                'wind_speed': env_data.wind_speed
+                'temperature': env_data.temperature or 20,
+                'humidity': env_data.humidity or 50,
+                'rainfall': env_data.rainfall or 0,
+                'soil_moisture': env_data.soil_moisture or 50,
+                'wind_speed': env_data.wind_speed or 0
             }
         
         # Calculate risks

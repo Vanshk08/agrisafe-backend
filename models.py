@@ -69,7 +69,7 @@ class EnvironmentalData(db.Model):
         return f'<EnvironmentalData batch={self.batch_id}>'
 
     def to_dict(self):
-        return {
+        data = {
             'id': self.id,
             'batch_id': self.batch_id,
             'temperature': self.temperature,
@@ -80,6 +80,7 @@ class EnvironmentalData(db.Model):
             'wind_speed': self.wind_speed,
             'date_recorded': self.date_recorded.isoformat() if self.date_recorded else None
         }
+        return {k: v for k, v in data.items() if v is not None}
 
 
 class ContaminationRisk(db.Model):
