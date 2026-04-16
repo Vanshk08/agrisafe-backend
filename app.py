@@ -216,6 +216,20 @@ def get_metadata():
     }), 200
 
 
+@app.route('/', methods=['GET'])
+def index():
+    """Root endpoint to check if API is running"""
+    return jsonify({
+        'status': 'online',
+        'message': 'AgriSafe AI API is running',
+        'version': '1.0.0',
+        'endpoints': {
+            'health_check': '/health',
+            'predict_image': '/predict-image',
+            'predict_risk': '/predict-risk'
+        }
+    })
+
 @app.route('/health', methods=['GET'])
 def health():
     """Health check endpoint"""
