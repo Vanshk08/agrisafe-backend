@@ -673,7 +673,7 @@ def calculate_food_safety_score(batch_id):
         risks_dict['harvest_safety'] = harvest_safety
         
         # Parse optional image and risk predictions
-        data = request.get_json() or {}
+        data = request.get_json(silent=True) or {}
         image_pred = data.get('image_prediction')
         risk_pred = data.get('risk_prediction')
         
