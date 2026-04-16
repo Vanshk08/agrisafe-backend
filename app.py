@@ -47,8 +47,8 @@ logger = logging.getLogger(__name__)
 
 # Initialize models
 try:
-    image_classifier = ImageClassifier(model_path='../models/saved_models/food_classifier.pkl')
-    risk_predictor = RiskPredictor(model_path='../models/saved_models/risk_predictor.pkl')
+    image_classifier = ImageClassifier(model_path='models/food_classifier.pkl')
+    risk_predictor = RiskPredictor(model_path='models/risk_predictor.pkl')
     logger.info("Models loaded successfully")
 except Exception as e:
     logger.warning(f"Models not found yet: {e}. Train models first.")

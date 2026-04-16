@@ -21,8 +21,8 @@ MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
 # Model Paths
 MODEL_PATHS = {
-    'image_classifier': '../models/saved_models/food_classifier.h5',
-    'risk_predictor': '../models/saved_models/risk_predictor.pkl'
+    'image_classifier': 'models/food_classifier.pkl',
+    'risk_predictor': 'models/risk_predictor.pkl'
 }
 
 # Food Types
