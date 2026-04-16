@@ -28,3 +28,6 @@ dev = [
     "black>=23.0.0",
     "flake8>=6.0.0",
 ]
+
+[tool.setuptools.packages.find]
+exclude = ["uploads*", "instance*"]
