@@ -204,7 +204,7 @@ def list_batches():
 
 # ==================== METADATA ENDPOINTS ====================
 
-@app.route('/metadata', methods=['GET'])
+@app.route('/api/metadata', methods=['GET'])
 def get_metadata():
     """Get available crop types, irrigation sources, etc."""
     return jsonify({
@@ -242,7 +242,7 @@ def health():
 
 
 
-@app.route('/predict-image', methods=['POST'])
+@app.route('/api/predict-image', methods=['POST'])
 def predict_image():
     """
     Predict food contamination from image
@@ -314,7 +314,7 @@ def predict_image():
         return jsonify({'error': f'Prediction failed: {str(e)}'}), 500
 
 
-@app.route('/predict-risk', methods=['POST'])
+@app.route('/api/predict-risk', methods=['POST'])
 def predict_risk():
     """
     Predict contamination risk based on food properties
