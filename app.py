@@ -74,7 +74,7 @@ def create_tables():
 
 # ==================== BATCH TRACEABILITY ENDPOINTS ====================
 
-@app.route('/batch/<batch_id>', methods=['GET'])
+@app.route('/api/batch/<batch_id>', methods=['GET'])
 def get_batch_details(batch_id):
     """
     Get complete traceability information for a batch
@@ -123,7 +123,7 @@ def get_batch_details(batch_id):
         return jsonify({'error': f'Failed to retrieve batch: {str(e)}'}), 500
 
 
-@app.route('/batch/<batch_id>/history', methods=['GET'])
+@app.route('/api/batch/<batch_id>/history', methods=['GET'])
 def get_batch_history(batch_id):
     """
     Get prediction history for a batch
@@ -152,7 +152,7 @@ def get_batch_history(batch_id):
         return jsonify({'error': f'Failed to retrieve history: {str(e)}'}), 500
 
 
-@app.route('/batches', methods=['GET'])
+@app.route('/api/batches', methods=['GET'])
 def list_batches():
     """
     Get all batches with summary information
@@ -427,7 +427,7 @@ def predict_risk():
         return jsonify({'error': f'Risk prediction failed: {str(e)}'}), 500
 
 
-@app.route('/food-types', methods=['GET'])
+@app.route('/api/food-types', methods=['GET'])
 def get_food_types():
     """Get list of available food types"""
     return jsonify({
@@ -438,7 +438,7 @@ def get_food_types():
 
 # ==================== AGRICULTURAL INPUT ENDPOINTS ====================
 
-@app.route('/agricultural-input', methods=['POST'])
+@app.route('/api/agricultural-input', methods=['POST'])
 def submit_agricultural_input():
     """
     Submit agricultural input data and store in database
@@ -534,7 +534,7 @@ def submit_agricultural_input():
         return jsonify({'error': f'Failed to store agricultural data: {str(e)}'}), 500
 
 
-@app.route('/agricultural-risk/<batch_id>', methods=['GET'])
+@app.route('/api/agricultural-risk/<batch_id>', methods=['GET'])
 def get_agricultural_risk(batch_id):
     """
     Calculate agricultural contamination risk for a batch
@@ -626,7 +626,7 @@ def get_agricultural_risk(batch_id):
 
 # ==================== FOOD SAFETY SCORE ENDPOINTS ====================
 
-@app.route('/food-safety-score/<batch_id>', methods=['POST'])
+@app.route('/api/food-safety-score/<batch_id>', methods=['POST'])
 def calculate_food_safety_score(batch_id):
     """
     Calculate overall food safety score for a batch
