@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agrisafe-backend"
+version = "0.1.0"
+description = "Agricultural Contamination Detection System - Flask API"
+requires-python = ">=3.9"
+dependencies = [
+    "Flask==3.0.0",
+    "Flask-CORS==4.0.0",
+    "Flask-SQLAlchemy>=3.0.0",
+    "psycopg2-binary>=2.9.0",
+    "numpy>=1.26.0",
+    "scikit-learn>=1.5.0",
+    "Pillow>=10.0.0",
+    "Werkzeug>=3.0.0",
+    "scikit-image>=0.23.0",
+    "python-dotenv==1.0.0",
+    "gunicorn>=21.2.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+]
